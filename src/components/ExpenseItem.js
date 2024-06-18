@@ -1,28 +1,16 @@
-import "./ExpenseItem.css";
-
+import './ExpenseItem.css';
+import ExpenseDate from './ExpenseDate';
 function ExpenseItem(props) {
-  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novemeber", "December"];
-    // const expenseDate = new Date(2023, 7, 15).toISOString();
-    const month = months[props.date.getMonth()];
-    const year = props.date.getFullYear();
-    const date  = (props.date.getDate()<10 ? '0': '') + props.date.getDate();
-    // const expenseTitle = "Insurance";
-    // const expenseAmount = 50;
-    // const expenseLocation = "Bangalore";
   return (
     <div className="expense-item">
-    <div>
-      <div>{month}</div>
-      <div>{year}</div>
-      <div>{date}</div>
-    </div>
-    <div className = "expense-item__description">
-      <h2>{props.title}</h2>
-      <div className="expense-item__price">${props.price}</div>
-    </div>
-    <div className="expense-item__location">{props.location}</div>
+      <ExpenseDate date= {props.date} />
+      <div className="expense-item__description">
+        <h2>{props.title}</h2>
+        <div className="expense-item__price">${props.price}</div>
+      </div>
+      <div className="expense-item__location">{props.location}</div>
     </div>
   );
-  }
-  
-  export default ExpenseItem;
+}
+
+export default ExpenseItem;
