@@ -32,9 +32,12 @@ function App() {
       location: 'Mumbai',
     },
   ];
+  const addExpenseDataHandler = (expenseData) => {
+    console.log(expenseData);
+  }
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpenseData={addExpenseDataHandler}/>
       <Expenses expenses={expenses} />
     </div>
   );
